@@ -1,0 +1,16 @@
+## test tool
+
+# except directory
+reference
+
+# object file
+*.o
+
+# library file
+*.a
+
+# execute file
+*.out
+
+# editor setting directory
+.vscode
