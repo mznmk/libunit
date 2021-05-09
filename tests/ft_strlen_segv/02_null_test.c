@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tested_functions.h                                 :+:      :+:    :+:   */
+/*   02_null_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:07:41 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 16:38:23 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/09 16:38:31 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTED_FUNCTIONS_H
-# define TESTED_FUNCTIONS_H
+#include "../include/test_strlen_segv.h"
 
-/*
-** =========================== prototype declaration ===========================
-*/
-
-unsigned long	ft_strlen(const char *s);
-unsigned long	ft_strlen_segv(const char *s);
-
-#endif
+int	strlen_segv_null_test(void)
+{
+	if (ft_strlen_segv(NULL) == 0)
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
+}

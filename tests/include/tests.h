@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 00:02:03 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/09 16:38:24 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 ** ================================== library ==================================
 */
 
-# include "include/test_strlen.h"
+# include "test_strlen.h"
+# include "test_strlen_segv.h"
 
 #endif

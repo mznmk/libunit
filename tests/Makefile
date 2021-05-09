@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 23:59:20 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/09 00:02:05 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/09 16:50:55 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,17 @@ TESTS_SRC_DIR		= ./
 TESTS_SRC_NAME		= ft_strlen/00_launcher.c \
 					  ft_strlen/01_basic_test.c \
 					  ft_strlen/02_null_test.c \
+					  ft_strlen_segv/00_launcher.c \
+					  ft_strlen_segv/01_basic_test.c \
+					  ft_strlen_segv/02_null_test.c \
 					  main.c
 TESTS_SRCS			= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME))
 TESTS_OBJS			= $(TESTS_SRCS:.c=.o)					  
 
 TESTED_INC_DIR		= ./include/
 TESTED_SRC_DIR		= ./tested_functions/
-TESTED_SRC_NAME		= ft_strlen.c
+TESTED_SRC_NAME		= ft_strlen.c \
+					  ft_strlen_segv.c
 TESTED_SRCS			= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME))
 TESTED_OBJS			= $(TESTED_SRCS:.c=.o)					  
 

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tested_functions.h                                 :+:      :+:    :+:   */
+/*   ft_strlen_segv.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:07:41 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 16:38:23 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 15:15:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/09 16:15:31 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTED_FUNCTIONS_H
-# define TESTED_FUNCTIONS_H
+unsigned long	ft_strlen_segv(const char *s)
+{
+	unsigned long	i;
 
-/*
-** =========================== prototype declaration ===========================
-*/
-
-unsigned long	ft_strlen(const char *s);
-unsigned long	ft_strlen_segv(const char *s);
-
-#endif
+	i = 0;
+	while (s[i++])
+		i++;
+	return (i);
+}

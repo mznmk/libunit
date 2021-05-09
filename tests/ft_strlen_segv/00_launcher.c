@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tested_functions.h                                 :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:07:41 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 16:38:23 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/09 16:38:28 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTED_FUNCTIONS_H
-# define TESTED_FUNCTIONS_H
+#include "../include/test_strlen_segv.h"
 
-/*
-** =========================== prototype declaration ===========================
-*/
+int	strlen_segv_launcher(void)
+{
+	t_unittest	*unittest;
 
-unsigned long	ft_strlen(const char *s);
-unsigned long	ft_strlen_segv(const char *s);
-
-#endif
+	unittest = NULL;
+	print_unittests_header("ft_strlen_segv");
+	add_unittest(&unittest, "Basic test", &strlen_segv_basic_test);
+	add_unittest(&unittest, "NULL test", &strlen_segv_null_test);
+	return (run_unittests(&unittest));
+}
