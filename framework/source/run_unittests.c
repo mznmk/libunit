@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:43:42 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/08 23:44:28 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/09 13:02:23 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	run_parent_process(
 ** @param	unittests:	bind all unittests
 ** @return	none
 */
-int	run_unittests(t_unittest **unittests)
+int	run_all_unittests(t_unittest **unittests)
 {
 	t_unittest	*unittest;
 	pid_t		pid;
@@ -108,11 +108,11 @@ int	run_unittests(t_unittest **unittests)
 ** @param	unittests:	bind all unittests
 ** @return	none
 */
-int	launch_unittests(t_unittest **unittests)
+int	run_unittests(t_unittest **unittests)
 {
 	int		status;
 
-	status = run_unittests(unittests);
+	status = run_all_unittests(unittests);
 	clear_unittests(unittests);
 	return (status);
 }

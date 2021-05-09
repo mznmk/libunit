@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:44:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/08 23:44:07 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/09 13:01:57 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	add_unittest(
 			t_unittest **unittests, char *testname, int (*testfunc)(void));
 void	clear_unittests(t_unittest **unittests);
 
-int		launch_unittests(t_unittest **unittests);
+int		run_unittests(t_unittest **unittests);
 void	exit_unittests(t_unittest **unittests, char *error_message);
 
 #endif
