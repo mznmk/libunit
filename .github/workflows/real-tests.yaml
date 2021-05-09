@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  tests:
+  real-tests:
     runs-on: ubuntu-latest
     steps:
       - name: check status of working directory
@@ -19,6 +19,11 @@ jobs:
 
       - name: checkout git repository
         uses: actions/checkout@v2
+
+      - name: check status of working directory
+        run: |
+          pwd
+          ls -la
 
       - name: run real-tests
         run: bash -c "make test -C real-tests"
