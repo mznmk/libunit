@@ -12,7 +12,7 @@
 
 ## ================================= Variable ================================= #
 
-NAME				= real_tests
+NAME				= real-tests
 
 TESTS_LIB_DIR		= ./library/
 TESTS_INC_DIR		= ./include/
@@ -23,10 +23,10 @@ TESTS_SRC_NAME		= ft_strlen/00_launcher.c \
 TESTS_SRCS			= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME))
 TESTS_OBJS			= $(TESTS_SRCS:.c=.o)					  
 
-LIBFT_DIR			= ../libft/
+LIBFT_DIR			= ./libft/
 LIBFT_NAME			= libft.a
 LIBFT_LIBNAME		= ft
-LIBFT_INC_DIR		= $(LIBFT_DIR)include/
+LIBFT_INC_DIR		= $(LIBFT_DIR)includes/
 
 LIBUNIT_DIR			= ../framework/
 LIBUNIT_NAME		= libunit.a
@@ -74,12 +74,12 @@ $(NAME):			$(TESTS_OBJS)
 					@cd $(LIBUNIT_DIR) && make fclean
 					$(CC) $(CFLAGS) $(TESTS_OBJS) $(LDFLAGS) $(LIBS) -o $(NAME)
 					@echo "$(ESC_CLR_N_YELLOW)"
-					@echo ' _            _       '
-					@echo '| |          | |      '
-					@echo '| |_ ___  ___| |_ ___ '
-					@echo '| __/ _ \/ __| __/ __|'
-					@echo '| ||  __/\__ \ |_\__ \'
-					@echo ' \__\___||___/\__|___/'
+					@echo '                _        _            _       '
+					@echo '               | |      | |          | |      '
+					@echo ' _ __ ___  __ _| |______| |_ ___  ___| |_ ___ '
+					@echo "| '__/ _ \/ _' | |______| __/ _ \/ __| __/ __|"
+					@echo '| | |  __/ (_| | |      | ||  __/\__ \ |_\__ \'
+					@echo '|_|  \___|\__,_|_|       \__\___||___/\__|___/'
 					@echo "$(ESC_CLR_RESET)"
 
 # ----------------------------------- all ------------------------------------ #

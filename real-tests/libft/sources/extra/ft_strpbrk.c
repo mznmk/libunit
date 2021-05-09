@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 23:32:41 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/01 23:34:09 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/10 06:45:22 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strpbrk(const char *s, const char *accept)
 		while (accept[++i])
 		{
 			if (*s == accept[i])
-				return (s);
+				return ((char *)s);
 		}
 		s++;
 	}
