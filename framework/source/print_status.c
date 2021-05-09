@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:43:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/08 23:44:26 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/09 15:02:47 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	print_unittests_header(char *tested_function_name)
 	ut_putstr_fd(tested_function_name, STDOUT_FILENO);
 	ut_putstr_fd(ESC_FNT_RESET, STDOUT_FILENO);
 	ut_putendl_fd(" > |", STDOUT_FILENO);
-	ut_putendl_fd("========================================", STDOUT_FILENO);
+	ut_putendl_fd("===================================================",
+		STDOUT_FILENO);
 }
 
 /*!
@@ -92,7 +93,7 @@ void	print_test_status(char *testname, char *testresult, char *resultcolor)
 void	print_test_score(int test_success, int test_failure)
 {
 	ut_putstr_fd(ESC_FNT_BOLD, STDOUT_FILENO);
-	ut_putendl_fd("----------------------------------------", STDOUT_FILENO);
+	ut_putendl_fd("---------------------------------------------------", STDOUT_FILENO);
 	if (test_failure)
 		ut_putstr_fd(ESC_CLR_RED, STDOUT_FILENO);
 	else
@@ -105,7 +106,7 @@ void	print_test_score(int test_success, int test_failure)
 	ut_putnbr_fd(test_success + test_failure, STDOUT_FILENO);
 	ut_putendl_fd(" ]", STDOUT_FILENO);
 	ut_putstr_fd(ESC_CLR_RESET, STDOUT_FILENO);
-	ut_putendl_fd("========================================", STDOUT_FILENO);
+	ut_putendl_fd("===================================================", STDOUT_FILENO);
 	ut_putstr_fd(ESC_FNT_RESET, STDOUT_FILENO);
 }
 
