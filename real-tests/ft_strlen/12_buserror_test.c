@@ -17,7 +17,6 @@ int ft_strlen_bus(char *str)
 	asm( "pushf\n\torl $0x40000,(%rsp)\n\tpopf");
     char *p = (char *)malloc(sizeof(int) + 1);
     memset(p, 0, sizeof(int) + 1);
-	//str[0] = 'a';
     return (ft_strlen(str));
 }
 
