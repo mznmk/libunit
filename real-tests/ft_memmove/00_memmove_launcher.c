@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   00_memmove_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 23:56:25 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 00:02:28 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#include "../include/test_memmove.h"
 
-static void	execute_tests(int *status)
+int	memmove_launcher(void)
 {
-	*status = *status | memmove_launcher();
-	*status = *status | strlen_launcher();
-	*status = *status | atoi_launcher();
-}
+	t_unittest	*unittest;
 
-int	main(void)
-{
-	int		status;
-
-	print_framework_header();
-	status = 0;
-	execute_tests(&status);
-	if (status != STAT_SUCCESS)
-		return (STAT_FAILURE);
-	return (STAT_SUCCESS);
+	unittest = NULL;
+	print_unittests_header("ft_memmove");
+	add_unittest(&unittest, "Basic text (Peach boy)", &memmove_basic_text_a);
+	return (run_unittests(&unittest));
 }

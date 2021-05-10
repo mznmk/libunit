@@ -17,7 +17,9 @@ NAME				= real-tests
 TESTS_LIB_DIR		= ./library/
 TESTS_INC_DIR		= ./include/
 TESTS_SRC_DIR		= ./
-TESTS_SRC_NAME		= ft_atoi/00_launcher.c \
+TESTS_SRC_NAME		= ft_memmove/00_memmove_launcher.c \
+					  ft_memmove/01_memmove_basic_text_a.c \
+					  ft_atoi/00_launcher.c \
 					  ft_atoi/01_zero_a.c \
 					  ft_atoi/02_positive_number_a.c \
 					  ft_atoi/03_negative_number_a.c \

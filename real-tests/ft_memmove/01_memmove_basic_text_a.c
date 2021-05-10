@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_memmove_basic_text_a.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 23:56:25 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 00:04:52 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#include "../include/test_memmove.h"
 
-static void	execute_tests(int *status)
+int	memmove_basic_text_a(void)
 {
-	*status = *status | memmove_launcher();
-	*status = *status | strlen_launcher();
-	*status = *status | atoi_launcher();
-}
+	char	*src;
+	char	dest_ft[100];
+	char	dest_libc[100];
+	size_t	len;
 
-int	main(void)
-{
-	int		status;
-
-	print_framework_header();
-	status = 0;
-	execute_tests(&status);
-	if (status != STAT_SUCCESS)
+	src = "Once upon a time, there lived an old couple in a small village.\0";
+	len = strlen(src);
+	ft_memmove(dest_ft, src, len);
+	memmove(dest_libc, src, len);
+	if (memcmp(dest_ft, dest_libc, len) == 0)
+		return (STAT_SUCCESS);
+	else
 		return (STAT_FAILURE);
-	return (STAT_SUCCESS);
 }

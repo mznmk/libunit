@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_memmove.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 23:56:25 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/10 21:01:17 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#ifndef TEST_MEMMOVE_H
+# define TEST_MEMMOVE_H
 
-static void	execute_tests(int *status)
-{
-	*status = *status | memmove_launcher();
-	*status = *status | strlen_launcher();
-	*status = *status | atoi_launcher();
-}
+/*
+** ================================== library ==================================
+*/
 
-int	main(void)
-{
-	int		status;
+# include <string.h>
 
-	print_framework_header();
-	status = 0;
-	execute_tests(&status);
-	if (status != STAT_SUCCESS)
-		return (STAT_FAILURE);
-	return (STAT_SUCCESS);
-}
+# include "libft.h"
+# include "../../framework/include/libunit.h"
+
+/*
+** =========================== prototype declaration ===========================
+*/
+
+int		memmove_launcher(void);
+int		memmove_basic_text_a(void);
+
+#endif
