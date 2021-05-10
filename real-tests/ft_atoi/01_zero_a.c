@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   01_zero_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 22:21:57 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/10 23:22:33 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "../include/test_atoi.h"
 
-/*
-** ================================== define ===================================
-*/
-
-# define STAT_SUCCESS	0
-# define STAT_FAILURE	-1
-
-/*
-** ================================== library ==================================
-*/
-
-# include "test_strlen.h"
-# include "test_atoi.h"
-
-#endif
+int	atoi_zero_a(void)
+{
+	if (ft_atoi("0") == atoi("0"))
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
+}
