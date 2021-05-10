@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:44:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 14:21:26 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/10 14:35:26 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void	ut_putstr_fd(char *s, int fd);
 
 void	print_framework_header(void);
 void	print_unittests_header(char *tested_function_name);
-void	print_test_status(char *testname, char *testresult, char *color);
-void	print_test_score(int test_success, int test_total);
+void	print_unittest_status(char *testname, char *testresult, char *color);
+void	print_unittests_score(int test_success, int test_total);
 void	print_error_message(char *error_message);
 
 void	add_unittest(

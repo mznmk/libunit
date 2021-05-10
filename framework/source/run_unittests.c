@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:43:42 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 12:51:26 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/10 14:35:29 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	run_all_unittests(t_unittest **unittests)
 			exit_unittests(unittests, "error: fail to execute unittest");
 		unittest = unittest->next;
 	}
-	print_test_score(test_success, test_failure);
+	print_unittests_score(test_success, test_failure);
 	if (test_failure)
 		return (STAT_FAILURE);
 	return (STAT_SUCCESS);

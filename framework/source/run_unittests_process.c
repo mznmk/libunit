@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 12:50:28 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 13:31:42 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/10 14:35:30 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,23 @@ void	run_child_process(t_unittest *unittest)
 static void	run_parent_process_normal_term(t_unittest *unittest, int status)
 {
 	if (WEXITSTATUS(status) == 0)
-		print_test_status(unittest->testname, "OK", ESC_CLR_GREEN);
+		print_unittest_status(unittest->testname, "OK", ESC_CLR_GREEN);
 	else
-		print_test_status(unittest->testname, "KO", ESC_CLR_RED);
+		print_unittest_status(unittest->testname, "KO", ESC_CLR_RED);
 }
 
 static void	run_parent_process_signal_term(t_unittest *unittest, int status)
 {
 	if (WTERMSIG(status) == SIGSEGV)
-		print_test_status(unittest->testname, "SEGV", ESC_CLR_YELLOW);
+		print_unittest_status(unittest->testname, "SEGV", ESC_CLR_YELLOW);
 	if (WTERMSIG(status) == SIGBUS)
-		print_test_status(unittest->testname, "BUSE", ESC_CLR_YELLOW);
+		print_unittest_status(unittest->testname, "BUSE", ESC_CLR_YELLOW);
 	if (WTERMSIG(status) == SIGABRT)
-		print_test_status(unittest->testname, "ABRT", ESC_CLR_YELLOW);
+		print_unittest_status(unittest->testname, "ABRT", ESC_CLR_YELLOW);
 	if (WTERMSIG(status) == SIGFPE)
-		print_test_status(unittest->testname, "FPE", ESC_CLR_YELLOW);
+		print_unittest_status(unittest->testname, "FPE", ESC_CLR_YELLOW);
 	if (WTERMSIG(status) == SIGALRM)
-		print_test_status(unittest->testname, "TOUT", ESC_CLR_YELLOW);
+		print_unittest_status(unittest->testname, "TOUT", ESC_CLR_YELLOW);
 }
 
 /*!
