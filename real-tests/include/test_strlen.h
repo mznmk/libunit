@@ -6,11 +6,7 @@
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/05/11 02:28:08 by tarata           ###   ########.fr       */
-=======
-/*   Updated: 2021/05/10 21:45:47 by mmizuno          ###   ########.fr       */
->>>>>>> origin
+/*   Updated: 2021/05/11 05:48:12 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +17,9 @@
 ** ================================== library ==================================
 */
 
+# include <stddef.h>
+# include <stdio.h>
+# include <stdlib.h>
 # include <string.h>
 
 # include "libft.h"
