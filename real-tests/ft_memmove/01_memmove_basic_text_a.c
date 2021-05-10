@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 00:04:52 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 00:20:26 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	memmove_basic_text_a(void)
 	char	dest_libc[100];
 	size_t	len;
 
-	src = "Once upon a time, there lived an old couple in a small village.\0";
+	src = "Once upon a time, there lived an old couple in a small village.";
 	len = strlen(src);
 	ft_memmove(dest_ft, src, len);
 	memmove(dest_libc, src, len);
