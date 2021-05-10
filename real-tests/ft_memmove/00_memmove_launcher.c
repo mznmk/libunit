@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   00_memmove_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 02:07:29 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 00:02:28 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "../include/test_memmove.h"
 
-/*
-** ================================== define ===================================
-*/
+int	memmove_launcher(void)
+{
+	t_unittest	*unittest;
 
-# define STAT_SUCCESS	0
-# define STAT_FAILURE	-1
-
-/*
-** ================================== library ==================================
-*/
-
-# include "test_memmove.h"
-# include "test_strlen.h"
-# include "test_atoi.h"
-
-#endif
+	unittest = NULL;
+	print_unittests_header("ft_memmove");
+	add_unittest(&unittest, "Basic text (Peach boy)", &memmove_basic_text_a);
+	return (run_unittests(&unittest));
+}

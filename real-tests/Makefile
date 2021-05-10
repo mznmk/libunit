@@ -17,8 +17,10 @@ NAME				= real-tests
 TESTS_LIB_DIR		= ./library/
 TESTS_INC_DIR		= ./include/
 TESTS_SRC_DIR		= ./
-TESTS_SRC_NAME		= ft_strlen/00_launcher.c \
-					  ft_strlen/01_basic_test.c \
+TESTS_SRC_NAME		= ft_memmove/00_memmove_launcher.c \
+					  ft_memmove/01_memmove_basic_text_a.c \
+					  ft_strlen/00_strlen_launcher.c \
+					  ft_strlen/01_strlen_basic_test.c \
 					  ft_strlen/02_long_str_test.c \
 					  ft_strlen/03_escaped_test.c \
 					  ft_strlen/04_escaped_test2.c \
@@ -30,6 +32,10 @@ TESTS_SRC_NAME		= ft_strlen/00_launcher.c \
 					  ft_strlen/10_basic_ko_test.c \
 					  ft_strlen/11_null_test.c \
 					  ft_strlen/12_buserror_test.c \
+					  ft_atoi/00_atoi_launcher.c \
+					  ft_atoi/01_atoi_zero_a.c \
+					  ft_atoi/02_atoi_positive_number_a.c \
+					  ft_atoi/03_atoi_negative_number_a.c \
 					  main.c
 TESTS_SRCS			= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME))
 TESTS_OBJS			= $(TESTS_SRCS:.c=.o)					  

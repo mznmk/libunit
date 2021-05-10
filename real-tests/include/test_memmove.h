@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   test_memmove.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 02:07:29 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/10 21:01:17 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
-
-/*
-** ================================== define ===================================
-*/
-
-# define STAT_SUCCESS	0
-# define STAT_FAILURE	-1
+#ifndef TEST_MEMMOVE_H
+# define TEST_MEMMOVE_H
 
 /*
 ** ================================== library ==================================
 */
 
-# include "test_memmove.h"
-# include "test_strlen.h"
-# include "test_atoi.h"
+# include <string.h>
+
+# include "libft.h"
+# include "../../framework/include/libunit.h"
+
+/*
+** =========================== prototype declaration ===========================
+*/
+
+int		memmove_launcher(void);
+int		memmove_basic_text_a(void);
 
 #endif

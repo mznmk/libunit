@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 00:59:47 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 02:08:17 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 static void	execute_tests(int *status)
 {
+	*status = *status | memmove_launcher();
 	*status = *status | strlen_launcher();
+	*status = *status | atoi_launcher();
 }
 
 int	main(void)

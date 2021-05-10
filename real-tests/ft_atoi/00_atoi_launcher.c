@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 02:07:29 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/10 23:24:29 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "../include/test_atoi.h"
 
-/*
-** ================================== define ===================================
-*/
+int	atoi_launcher(void)
+{
+	t_unittest	*unittest;
 
-# define STAT_SUCCESS	0
-# define STAT_FAILURE	-1
-
-/*
-** ================================== library ==================================
-*/
-
-# include "test_memmove.h"
-# include "test_strlen.h"
-# include "test_atoi.h"
-
-#endif
+	unittest = NULL;
+	print_unittests_header("ft_atoi");
+	add_unittest(&unittest, "Zero (digit==1)", &atoi_zero_a);
+	add_unittest(&unittest, "Positive number (digit==1)", &atoi_positive_number_a);
+	add_unittest(&unittest, "Negative number (digit==1)", &atoi_negative_number_a);
+	return (run_unittests(&unittest));
+}
