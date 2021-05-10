@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_strlen.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 06:27:57 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 02:28:08 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,16 @@
 
 int		strlen_launcher(void);
 int		strlen_basic_test(void);
+int		long_str_test(void);
+int		only_escaped_char_test(void);
+int		mix_escaped_char_test(void);
+int 	only_space_char_test(void);
+int		mix_space_char_test(void);
+int 	only_terminated_char_test(void);
+int		mix_terminated_char_test(void);
+int 	unicode_char_test(void);
+int 	basic_ko_test(void);
+int 	null_test(void);
+int 	buserror_test(void);
 
 #endif

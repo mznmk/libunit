@@ -19,6 +19,17 @@ TESTS_INC_DIR		= ./include/
 TESTS_SRC_DIR		= ./
 TESTS_SRC_NAME		= ft_strlen/00_launcher.c \
 					  ft_strlen/01_basic_test.c \
+					  ft_strlen/02_long_str_test.c \
+					  ft_strlen/03_escaped_test.c \
+					  ft_strlen/04_escaped_test2.c \
+					  ft_strlen/05_space_test.c \
+					  ft_strlen/06_space_test2.c \
+					  ft_strlen/07_terminated_test.c \
+					  ft_strlen/08_terminated_test2.c \
+					  ft_strlen/09_unicode_test.c \
+					  ft_strlen/10_basic_ko_test.c \
+					  ft_strlen/11_null_test.c \
+					  ft_strlen/12_buserror_test.c \
 					  main.c
 TESTS_SRCS			= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME))
 TESTS_OBJS			= $(TESTS_SRCS:.c=.o)					  
