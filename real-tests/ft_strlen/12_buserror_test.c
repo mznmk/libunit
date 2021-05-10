@@ -6,19 +6,16 @@
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 01:59:42 by tarata            #+#    #+#             */
-/*   Updated: 2021/05/11 06:03:08 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/11 05:47:54 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/test_strlen.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int ft_strlen_bus(char *str)
 {
 	asm( "pushf\n\torl $0x40000,(%rsp)\n\tpopf");
-    char *p = (char*)malloc(sizeof(int) + 1);
+    char *p = (char *)malloc(sizeof(int) + 1);
     memset(p, 0, sizeof(int) + 1);
     return (ft_strlen(str));
 }
