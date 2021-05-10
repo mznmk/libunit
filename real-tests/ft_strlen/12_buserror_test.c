@@ -6,7 +6,7 @@
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 01:59:42 by tarata            #+#    #+#             */
-/*   Updated: 2021/05/11 03:51:17 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/11 06:03:08 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int ft_strlen_bus(char *str)
 	asm( "pushf\n\torl $0x40000,(%rsp)\n\tpopf");
     char *p = (char*)malloc(sizeof(int) + 1);
     memset(p, 0, sizeof(int) + 1);
-	//str[0] = 'a';
     return (ft_strlen(str));
 }
 
