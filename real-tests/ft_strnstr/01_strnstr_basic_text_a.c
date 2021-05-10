@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_strnstr_basic_text_a.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 00:42:56 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 00:30:16 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#include "../include/test_strnstr.h"
 
-static void	execute_tests(int *status)
+int	strnstr_basic_text_a(void)
 {
-	*status = *status | memmove_launcher();
-	*status = *status | strlen_launcher();
-	*status = *status | atoi_launcher();
-}
+	char	*str_big;
+	char	*str_little;
+	size_t	len;
 
-int	main(void)
-{
-	int		status;
-
-	print_framework_header();
-	status = 0;
-	execute_tests(&status);
-	if (status != STAT_SUCCESS)
+	str_big = "Once upon a time, there lived an old couple in a small village.";
+	str_little = " a";
+	len = strlen(str_little);
+	if (ft_strnstr(str_big, str_little, len)
+		== strnstr(str_big, str_little, len))
+		return (STAT_SUCCESS);
+	else
 		return (STAT_FAILURE);
-	return (STAT_SUCCESS);
 }

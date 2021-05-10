@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_strnstr.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 00:42:56 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/10 21:01:17 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#ifndef TEST_STRNSTR_H
+# define TEST_STRNSTR_H
 
-static void	execute_tests(int *status)
-{
-	*status = *status | memmove_launcher();
-	*status = *status | strlen_launcher();
-	*status = *status | atoi_launcher();
-}
+/*
+** ================================== library ==================================
+*/
 
-int	main(void)
-{
-	int		status;
+# define _GNU_SOURCE
+# include <string.h>
 
-	print_framework_header();
-	status = 0;
-	execute_tests(&status);
-	if (status != STAT_SUCCESS)
-		return (STAT_FAILURE);
-	return (STAT_SUCCESS);
-}
+# include "libft.h"
+# include "../../framework/include/libunit.h"
+
+/*
+** =========================== prototype declaration ===========================
+*/
+
+int		strnstr_launcher(void);
+int		strnstr_basic_text_a(void);
+
+#endif
