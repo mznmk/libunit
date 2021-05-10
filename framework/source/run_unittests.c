@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:43:42 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 13:02:23 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/10 12:51:26 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,52 +23,6 @@ void	exit_unittests(t_unittest **unittests, char *error_message)
 	print_error_message(error_message);
 	clear_unittests(unittests);
 	exit(STAT_FAILURE);
-}
-
-/*!
-** @brief	run child process
-** @param	unittest:	current unittest
-** @return	none
-*/
-void	run_child_process(t_unittest *unittest)
-{
-	int	status;
-
-	status = unittest->testfunc();
-	exit(status);
-}
-
-/*!
-** @brief	run parent process
-** @param	unittest:		current unittest
-** @param	test_success:	test success count (total)
-** @param	test_failure:	test failure count (total)
-** @return	none
-*/
-void	run_parent_process(
-			t_unittest *unittest, int *test_success, int *test_failure)
-{
-	int		status;
-
-	wait(&status);
-	if (WIFEXITED(status) && WEXITSTATUS(status) == 0)
-		(*test_success)++;
-	else
-		(*test_failure)++;
-	if (WIFEXITED(status))
-	{
-		if (WEXITSTATUS(status) == 0)
-			print_test_status(unittest->testname, "OK", ESC_CLR_GREEN);
-		else
-			print_test_status(unittest->testname, "KO", ESC_CLR_RED);
-	}
-	if (WIFSIGNALED(status))
-	{
-		if (WTERMSIG(status) == SIGSEGV)
-			print_test_status(unittest->testname, "SEGV", ESC_CLR_MAGENTA);
-		if (WTERMSIG(status) == SIGBUS)
-			print_test_status(unittest->testname, "BUSE", ESC_CLR_MAGENTA);
-	}	
 }
 
 /*!

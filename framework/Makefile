@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/05 20:29:41 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/08 23:10:04 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/10 12:51:55 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,9 @@ SRC_NAME			= utility/ut_putchar_fd.c \
 					  utility/ut_putnbr_fd.c \
 					  utility/ut_putstr_fd.c \
 					  utility/ut_strlen.c \
-					  unittest_list.c \
+					  list_utilities.c \
 					  print_status.c \
+					  run_unittests_process.c \
 					  run_unittests.c
 SRCS				= $(addprefix $(SRC_DIR), $(SRC_NAME))
 OBJS				= $(SRCS:.c=.o)					  

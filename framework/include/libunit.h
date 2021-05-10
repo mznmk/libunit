@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:44:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 15:01:33 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/10 14:21:26 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,9 @@ void	add_unittest(
 void	clear_unittests(t_unittest **unittests);
 
 int		run_unittests(t_unittest **unittests);
+void	run_parent_process(
+			t_unittest *unittest, int *test_success, int *test_failure);
+void	run_child_process(t_unittest *unittest);
 void	exit_unittests(t_unittest **unittests, char *error_message);
 
 #endif
