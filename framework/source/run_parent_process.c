@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   run_unittests_process.c                            :+:      :+:    :+:   */
+/*   run_parent_process.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 12:50:28 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 14:35:30 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 20:53:37 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libunit.h"
-
-/*!
-** @brief	run child process
-** @param	unittest:	current unittest
-** @return	none
-*/
-void	run_child_process(t_unittest *unittest)
-{
-	int	status;
-
-	status = unittest->testfunc();
-	exit(status);
-}
 
 /*!
 ** @brief	run parent process (helper function)
@@ -35,6 +22,8 @@ static void	run_parent_process_normal_term(t_unittest *unittest, int status)
 {
 	if (WEXITSTATUS(status) == 0)
 		print_unittest_status(unittest->testname, "OK", ESC_CLR_GREEN);
+	else if (WEXITSTATUS(status) == SIGALRM)
+		print_unittest_status(unittest->testname, "TOUT", ESC_CLR_YELLOW);
 	else
 		print_unittest_status(unittest->testname, "KO", ESC_CLR_RED);
 }
@@ -49,8 +38,6 @@ static void	run_parent_process_signal_term(t_unittest *unittest, int status)
 		print_unittest_status(unittest->testname, "ABRT", ESC_CLR_YELLOW);
 	if (WTERMSIG(status) == SIGFPE)
 		print_unittest_status(unittest->testname, "FPE", ESC_CLR_YELLOW);
-	if (WTERMSIG(status) == SIGALRM)
-		print_unittest_status(unittest->testname, "TOUT", ESC_CLR_YELLOW);
 }
 
 /*!
@@ -72,6 +59,6 @@ void	run_parent_process(
 		(*test_failure)++;
 	if (WIFEXITED(status))
 		run_parent_process_normal_term(unittest, status);
-	if (WIFSIGNALED(status))
+	else if (WIFSIGNALED(status))
 		run_parent_process_signal_term(unittest, status);
 }

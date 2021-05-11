@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:43:42 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/10 14:35:29 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 19:27:10 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,31 +30,24 @@ void	exit_unittests(t_unittest **unittests, char *error_message)
 ** @param	unittests:	bind all unittests
 ** @return	none
 */
-int	run_all_unittests(t_unittest **unittests)
+static void	run_all_unittests(
+				t_unittest **unittests, int *test_success, int *test_failure)
 {
 	t_unittest	*unittest;
 	pid_t		pid;
-	int			test_success;
-	int			test_failure;
 
 	unittest = *unittests;
-	test_success = 0;
-	test_failure = 0;
 	while (unittest)
 	{
 		pid = fork();
 		if (pid == 0)
 			run_child_process(unittest);
 		else if (pid > 0)
-			run_parent_process(unittest, &test_success, &test_failure);
+			run_parent_process(unittest, test_success, test_failure);
 		else
 			exit_unittests(unittests, "error: fail to execute unittest");
 		unittest = unittest->next;
 	}
-	print_unittests_score(test_success, test_failure);
-	if (test_failure)
-		return (STAT_FAILURE);
-	return (STAT_SUCCESS);
 }
 
 /*!
@@ -64,9 +57,15 @@ int	run_all_unittests(t_unittest **unittests)
 */
 int	run_unittests(t_unittest **unittests)
 {
-	int		status;
+	int		test_success;
+	int		test_failure;
 
-	status = run_all_unittests(unittests);
+	test_success = 0;
+	test_failure = 0;
+	run_all_unittests(unittests, &test_success, &test_failure);
 	clear_unittests(unittests);
-	return (status);
+	print_unittests_score(test_success, test_failure);
+	if (test_failure)
+		return (STAT_FAILURE);
+	return (STAT_SUCCESS);
 }
