@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_true_test_return_ok.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 18:12:07 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 19:31:27 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#include "../include/test_strlen_segv.h"
 
-static void	execute_tests(int *status)
+int	strlen_true_test_return_ok(void)
 {
-	*status = *status | strlen_launcher();
-	*status = *status | strlen_segv_launcher();
-}
-
-int	main(void)
-{
-	int		status;
-
-	print_framework_header();
-	status = 0;
-	execute_tests(&status);
-	if (status != STAT_SUCCESS)
+	if (ft_strlen_segv("HelloWork") == strlen("HelloWork"))
+		return (STAT_SUCCESS);
+	else
 		return (STAT_FAILURE);
-	return (STAT_SUCCESS);
 }

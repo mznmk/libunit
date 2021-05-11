@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 13:02:15 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 17:49:27 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int	strlen_launcher(void)
 
 	unittest = NULL;
 	print_unittests_header("ft_strlen");
-	add_unittest(&unittest, "Basic test", &strlen_basic_test);
-	add_unittest(&unittest, "NULL test", &strlen_null_test);
+	add_unittest(&unittest, "TRUE Test - returns OK",
+		&strlen_true_test_return_ok);
+	add_unittest(&unittest, "FALSE Test - returns OK",
+		&strlen_false_test_return_ok);
+	add_unittest(&unittest, "TRUE Test - returns SEGV",
+		&strlen_true_test_return_segv);
 	return (run_unittests(&unittest));
 }

@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 23:59:20 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/09 16:50:55 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/11 19:38:58 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,14 @@ NAME				= tests
 TESTS_LIB_DIR		= ./library/
 TESTS_INC_DIR		= ./include/
 TESTS_SRC_DIR		= ./
-TESTS_SRC_NAME		= ft_strlen/00_launcher.c \
-					  ft_strlen/01_basic_test.c \
-					  ft_strlen/02_null_test.c \
-					  ft_strlen_segv/00_launcher.c \
-					  ft_strlen_segv/01_basic_test.c \
-					  ft_strlen_segv/02_null_test.c \
+TESTS_SRC_NAME		= ft_strlen/00_strlen_launcher.c \
+					  ft_strlen/01_strlen_true_test_return_ok.c \
+					  ft_strlen/02_strlen_false_test_return_ok.c \
+					  ft_strlen/03_strlen_true_test_return_segv.c \
+					  ft_strlen_segv/00_strlen_segv_launcher.c \
+					  ft_strlen_segv/01_strlen_segv_true_test_return_ok.c \
+					  ft_strlen_segv/02_strlen_segv_false_test_return_ok.c \
+					  ft_strlen_segv/03_strlen_segv_true_test_return_segv.c \
 					  main.c
 TESTS_SRCS			= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME))
 TESTS_OBJS			= $(TESTS_SRCS:.c=.o)					  

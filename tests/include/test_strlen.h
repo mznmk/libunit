@@ -6,19 +6,12 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 00:07:44 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 17:44:38 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEST_STRLEN_H
 # define TEST_STRLEN_H
-
-/*
-** ==================================+ const ===================================
-*/
-
-# define STAT_SUCCESS	0
-# define STAT_FAILURE	-1
 
 /*
 ** ================================== library ==================================
@@ -34,7 +27,8 @@
 */
 
 int		strlen_launcher(void);
-int		strlen_basic_test(void);
-int		strlen_null_test(void);
+int		strlen_true_test_return_ok(void);
+int		strlen_false_test_return_ok(void);
+int		strlen_true_test_return_segv(void);
 
 #endif

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   03_true_test_return_segv.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 16:38:28 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 17:30:06 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_strlen_segv.h"
+#include "../include/test_strlen.h"
 
-int	strlen_segv_launcher(void)
+int	strlen_true_test_return_segv(void)
 {
-	t_unittest	*unittest;
-
-	unittest = NULL;
-	print_unittests_header("ft_strlen_segv");
-	add_unittest(&unittest, "Basic test", &strlen_segv_basic_test);
-	add_unittest(&unittest, "NULL test", &strlen_segv_null_test);
-	return (run_unittests(&unittest));
+	if (ft_strlen(NULL) == 0)
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
 }
