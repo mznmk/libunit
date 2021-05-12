@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_tests.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 22:12:17 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 06:50:21 by mmizuno          ###   ########.fr       */
+/*   Created: 2020/10/09 01:17:52 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/13 06:49:25 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#include "../include/tested_functions.h"
 
-void	execute_tests(int *status)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	*status = *status | strlen_launcher();
-	*status = *status | strlen_segv_launcher();
-	*status = *status | strcpy_launcher();
+	long	i;
+	// long	src_len;
+
+	if (!src)
+		return (dst);
+	// src_len = ft_strlen((char *)src);
+	i = -1;
+	while (src[++i])
+		dst[i] = src[i];
+	dst[++i] = '\0';
+	return (dst);
 }

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_tests.c                                    :+:      :+:    :+:   */
+/*   01_strcpy_true_test_return_buse.c                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 22:12:17 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 06:50:21 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/13 06:46:08 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#include "../include/test_strcpy.h"
 
-void	execute_tests(int *status)
+int	strcpy_true_test_return_buse(void)
 {
-	*status = *status | strlen_launcher();
-	*status = *status | strlen_segv_launcher();
-	*status = *status | strcpy_launcher();
+	char	*dest_ft;
+	char	*dest_libc;
+
+	dest_ft = "";
+	dest_libc = "";
+	if (ft_strcpy(dest_ft, "HelloWork") == strcpy(dest_libc, "HelloWork"))
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
 }
