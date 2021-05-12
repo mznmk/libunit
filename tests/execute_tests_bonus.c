@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   execute_tests_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 22:40:41 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/11 22:12:08 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 22:25:56 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *s)
-{
-	unsigned long	i;
+#include "include/tests.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+void	execute_tests(int *status)
+{
+	*status = *status | strlen_launcher();
+	*status = *status | strlen_segv_launcher();
+	*status = *status | strlen_timeout_launcher();
 }
