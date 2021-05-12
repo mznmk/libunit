@@ -6,61 +6,76 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 23:59:20 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/09 16:50:55 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/11 22:32:59 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ## ================================= Variable ================================= #
 
-NAME				= tests
+NAME					= tests
 
-TESTS_LIB_DIR		= ./library/
-TESTS_INC_DIR		= ./include/
-TESTS_SRC_DIR		= ./
-TESTS_SRC_NAME		= ft_strlen/00_launcher.c \
-					  ft_strlen/01_basic_test.c \
-					  ft_strlen/02_null_test.c \
-					  ft_strlen_segv/00_launcher.c \
-					  ft_strlen_segv/01_basic_test.c \
-					  ft_strlen_segv/02_null_test.c \
-					  main.c
-TESTS_SRCS			= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME))
-TESTS_OBJS			= $(TESTS_SRCS:.c=.o)					  
+TESTS_LIB_DIR			= ./library/
+TESTS_INC_DIR			= ./include/
+TESTS_SRC_DIR			= ./
 
-TESTED_INC_DIR		= ./include/
-TESTED_SRC_DIR		= ./tested_functions/
-TESTED_SRC_NAME		= ft_strlen.c \
-					  ft_strlen_segv.c
-TESTED_SRCS			= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME))
-TESTED_OBJS			= $(TESTED_SRCS:.c=.o)					  
+TESTS_SRC_NAME_COMMON	= ft_strlen/00_strlen_launcher.c \
+						  ft_strlen/01_strlen_true_test_return_ok.c \
+						  ft_strlen/02_strlen_false_test_return_ok.c \
+						  ft_strlen/03_strlen_true_test_return_segv.c \
+						  ft_strlen_segv/00_strlen_segv_launcher.c \
+						  ft_strlen_segv/01_strlen_segv_true_test_return_ok.c \
+						  ft_strlen_segv/02_strlen_segv_false_test_return_ok.c \
+						  ft_strlen_segv/03_strlen_segv_true_test_return_segv.c
+TESTS_SRCS_COMMON		= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME_COMMON))
+TESTS_OBJS_COMMON		= $(TESTS_SRCS_COMMON:.c=.o)
+TESTS_SRC_NAME_MANDA	= execute_tests.c \
+						  main.c
+TESTS_SRCS_MANDA		= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME_MANDA))
+TESTS_OBJS_MANDA		= $(TESTS_SRCS_MANDA:.c=.o)					  
+TESTS_SRC_NAME_BONUS	= ft_strlen_timeout/00_strlen_timeout_launcher.c \
+						  ft_strlen_timeout/01_strlen_timeout_true_test_return_timeout.c \
+						  execute_tests_bonus.c \
+						  main.c
+TESTS_SRCS_BONUS		= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME_BONUS))
+TESTS_OBJS_BONUS		= $(TESTS_SRCS_BONUS:.c=.o)
 
-LIBUNIT_DIR			= ../framework/
-LIBUNIT_NAME		= libunit.a
-LIBUNIT_LIBNAME		= unit
-LIBUNIT_INC_DIR		= $(LIBUNIT_DIR)include/
+TESTED_INC_DIR			= ./include/
+TESTED_SRC_DIR			= ./tested_functions/
+TESTED_SRC_NAME_COMMON	= ft_strlen.c \
+						  ft_strlen_segv.c
+TESTED_SRCS_COMMON		= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME_COMMON))
+TESTED_OBJS_COMMON		= $(TESTED_SRCS_COMMON:.c=.o)
+TESTED_SRC_NAME_BONUS	= ft_strlen_timeout.c
+TESTED_SRCS_BONUS		= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME_BONUS))
+TESTED_OBJS_BONUS		= $(TESTED_SRCS_BONUS:.c=.o)
 
-CC					= gcc
-CFLAGS				= -Wall -Wextra -Werror #-g -fsanitize=address
-INCLUDE				= -I $(TESTS_INC_DIR) -I $(TESTED_INC_DIR) -I $(LIBUNIT_INC_DIR)
-LDFLAGS				= -L $(TESTS_LIB_DIR)
-LIBS				= -l $(LIBUNIT_LIBNAME)
+LIBUNIT_DIR				= ../framework/
+LIBUNIT_NAME			= libunit.a
+LIBUNIT_LIBNAME			= unit
+LIBUNIT_INC_DIR			= $(LIBUNIT_DIR)include/
 
-AR					= ar
-ARFLAGS				= rcs
+CC						= gcc
+CFLAGS					= -Wall -Wextra -Werror #-g -fsanitize=address
+INCLUDE					= -I $(TESTS_INC_DIR) -I $(TESTED_INC_DIR) -I $(LIBUNIT_INC_DIR)
+LDFLAGS					= -L $(TESTS_LIB_DIR)
+LIBS					= -l $(LIBUNIT_LIBNAME)
 
-RM					= rm -f
+AR						= ar
+ARFLAGS					= rcs
+
+RM						= rm -f
 
 # ---------------------------------- color ----------------------------------- #
 
 ESC_CLR_RESET		= \e[00m
-ESC_CLR_N_BLACK		= \e[30m
-ESC_CLR_N_RED		= \e[31m
-ESC_CLR_N_GREEN		= \e[32m
-ESC_CLR_N_YELLOW	= \e[33m
-ESC_CLR_N_BLUE		= \e[34m
-ESC_CLR_N_MAGENTA	= \e[35m
-ESC_CLR_N_CYAN		= \e[36m
-ESC_CLR_N_WHITE		= \e[37m
+ESC_CLR_BLACK		= \e[30m
+ESC_CLR_RED			= \e[31m
+ESC_CLR_GREEN		= \e[32m
+ESC_CLR_YELLOW		= \e[33m
+ESC_CLR_BLUE		= \e[34m
+ESC_CLR_MAGENTA		= \e[35m
+ESC_CLR_CYAN		= \e[36m
+ESC_CLR_WHITE		= \e[37m
 
 # =============================== Make Command =============================== #
 
@@ -71,12 +86,12 @@ ESC_CLR_N_WHITE		= \e[37m
 
 # --------------------------------- $(NAME) ---------------------------------- #
 
-$(NAME):			$(TESTS_OBJS) $(TESTED_OBJS)
-					@cd $(LIBUNIT_DIR) && make re
+$(NAME):			$(TESTS_OBJS_COMMON) $(TESTS_OBJS_MANDA) $(TESTED_OBJS_COMMON)
+					@cd $(LIBUNIT_DIR) && make fclean && make mandatory
 					@cp $(LIBUNIT_DIR)$(LIBUNIT_NAME) $(TESTS_LIB_DIR)
 					@cd $(LIBUNIT_DIR) && make fclean
-					$(CC) $(CFLAGS) $(TESTS_OBJS) $(TESTED_OBJS) $(LDFLAGS) $(LIBS) -o $(NAME)
-					@echo "$(ESC_CLR_N_YELLOW)"
+					$(CC) $(CFLAGS) $(TESTS_OBJS_COMMON) $(TESTS_OBJS_MANDA) $(TESTED_OBJS_COMMON) $(LDFLAGS) $(LIBS) -o $(NAME)
+					@echo "$(ESC_CLR_YELLOW)"
 					@echo ' _            _       '
 					@echo '| |          | |      '
 					@echo '| |_ ___  ___| |_ ___ '
@@ -92,7 +107,7 @@ all:				$(NAME)
 # ---------------------------------- clean ----------------------------------- #
 
 clean:
-					$(RM) $(TESTS_OBJS) $(TESTED_OBJS)
+					$(RM) $(TESTS_OBJS_COMMON) $(TESTS_OBJS_MANDA) $(TESTS_OBJS_BONUS) $(TESTED_OBJS_COMMON) $(TESTED_OBJS_BONUS)
 					$(RM) $(TESTS_LIB_DIR)$(LIBUNIT_NAME)
 
 # ---------------------------------- fclean ---------------------------------- #
@@ -109,6 +124,23 @@ re:					fclean all
 test:				$(NAME)
 					@./$(NAME)
 
+# -------------------------------- test_bonus -------------------------------- #
+
+test_bonus:			$(TESTS_OBJS_COMMON) $(TESTS_OBJS_BONUS) $(TESTED_OBJS_COMMON) $(TESTED_OBJS_BONUS)
+					@cd $(LIBUNIT_DIR) && make fclean && make bonus
+					@cp $(LIBUNIT_DIR)$(LIBUNIT_NAME) $(TESTS_LIB_DIR)
+					@cd $(LIBUNIT_DIR) && make fclean
+					$(CC) $(CFLAGS) $(TESTS_OBJS_COMMON) $(TESTS_OBJS_BONUS) $(TESTED_OBJS_COMMON) $(TESTED_OBJS_BONUS) $(LDFLAGS) $(LIBS) -o $(NAME)
+					@echo "$(ESC_CLR_CYAN)"
+					@echo ' _            _       '
+					@echo '| |          | |      '
+					@echo '| |_ ___  ___| |_ ___ '
+					@echo '| __/ _ \/ __| __/ __|'
+					@echo '| ||  __/\__ \ |_\__ \'
+					@echo ' \__\___||___/\__|___/'
+					@echo "$(ESC_CLR_RESET)"
+					@./$(NAME)
+
 # ---------------------------------- .PHONY ---------------------------------- #
 
-.PHONY:				all clean fclean re test
+.PHONY:				all clean fclean re test test_bonus

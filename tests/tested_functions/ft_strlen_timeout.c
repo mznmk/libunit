@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlen_segv.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 22:40:41 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 15:15:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/09 16:15:31 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *s)
+unsigned long	ft_strlen_timeout(const char *s)
 {
 	unsigned long	i;
 
 	i = 0;
-	while (s[i])
-		i++;
+	while (s[i++])
+		i--;
 	return (i);
 }

@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   test_strlen_timeout.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 22:16:18 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/09 15:22:50 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
-
-/*
-** ================================== define ===================================
-*/
-
-# define STAT_SUCCESS	0
-# define STAT_FAILURE	-1
+#ifndef TEST_STRLEN_TIMEOUT_H
+# define TEST_STRLEN_TIMEOUT_H
 
 /*
 ** ================================== library ==================================
 */
 
-# include "test_strlen.h"
-# include "test_strlen_segv.h"
-# include "test_strlen_timeout.h"
+# include <string.h>
+
+# include "../../framework/include/libunit.h"
+# include "tested_functions.h"
 
 /*
 ** =========================== prototype declaration ===========================
 */
 
-void	execute_tests(int *status);
+int		strlen_timeout_launcher(void);
+int		strlen_timeout_true_test_return_timeout(void);
 
 #endif

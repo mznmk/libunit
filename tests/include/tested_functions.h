@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:07:41 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 16:38:23 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 21:08:42 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 
 unsigned long	ft_strlen(const char *s);
 unsigned long	ft_strlen_segv(const char *s);
+unsigned long	ft_strlen_timeout(const char *s);
 
 #endif

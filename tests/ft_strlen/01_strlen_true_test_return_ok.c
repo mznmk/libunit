@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   01_strlen_true_test_return_ok.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 22:40:41 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 21:41:32 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *s)
-{
-	unsigned long	i;
+#include "../include/test_strlen_segv.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+int	strlen_true_test_return_ok(void)
+{
+	if (ft_strlen("HelloWork") == strlen("HelloWork"))
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
 }

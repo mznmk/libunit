@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   00_strlen_timeout_launcher.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 16:38:28 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 21:13:02 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_strlen_segv.h"
+#include "../include/test_strlen_timeout.h"
 
-int	strlen_segv_launcher(void)
+int	strlen_timeout_launcher(void)
 {
 	t_unittest	*unittest;
 
 	unittest = NULL;
-	print_unittests_header("ft_strlen_segv");
-	add_unittest(&unittest, "Basic test", &strlen_segv_basic_test);
-	add_unittest(&unittest, "NULL test", &strlen_segv_null_test);
+	print_unittests_header("ft_strlen_timeout(Bonus)");
+	add_unittest(&unittest, "TRUE Test - returns TOUT",
+		&strlen_timeout_true_test_return_timeout);
 	return (run_unittests(&unittest));
 }

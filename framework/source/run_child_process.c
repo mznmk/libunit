@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   run_child_prcess.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 22:40:41 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/11 20:24:48 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/11 20:27:32 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *s)
-{
-	unsigned long	i;
+#include "../include/libunit.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+/*!
+** @brief	run child process
+** @param	unittest:	current unittest
+** @return	none
+*/
+void	run_child_process(t_unittest *unittest)
+{
+	int	status;
+
+	status = unittest->testfunc();
+	exit(status);
 }

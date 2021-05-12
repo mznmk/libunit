@@ -6,17 +6,11 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/09 16:47:23 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/11 22:25:51 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/tests.h"
-
-static void	execute_tests(int *status)
-{
-	*status = *status | strlen_launcher();
-	*status = *status | strlen_segv_launcher();
-}
 
 int	main(void)
 {

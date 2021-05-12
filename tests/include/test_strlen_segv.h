@@ -14,13 +14,6 @@
 # define TEST_STRLEN_SEGV_H
 
 /*
-** ==================================+ const ===================================
-*/
-
-# define STAT_SUCCESS	0
-# define STAT_FAILURE	-1
-
-/*
 ** ================================== library ==================================
 */
 
@@ -34,7 +27,8 @@
 */
 
 int		strlen_segv_launcher(void);
-int		strlen_segv_basic_test(void);
-int		strlen_segv_null_test(void);
+int		strlen_segv_true_test_return_ok(void);
+int		strlen_segv_false_test_return_ok(void);
+int		strlen_segv_true_test_return_segv(void);
 
 #endif
