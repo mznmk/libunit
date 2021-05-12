@@ -4,26 +4,14 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   real-tests:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
-      - name: check status of working directory
-        run: |
-          pwd
-          ls -la
 
       - name: checkout git repository
         uses: actions/checkout@v2
 
-      - name: check status of working directory
-        run: |
-          pwd
-          ls -la
-
-      - name: run real-tests
+      - name: run "make test"
         run: bash -c "make test -C real-tests"
