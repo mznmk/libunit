@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strlen.h                                      :+:      :+:    :+:   */
+/*   test_isalnum.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/12 07:14:37 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/10 21:01:17 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_STRLEN_H
-# define TEST_STRLEN_H
+#ifndef TEST_ISALNUM_H
+# define TEST_ISALNUM_H
 
 /*
 ** ================================== library ==================================
 */
 
-# include <stddef.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
+# include <ctype.h>
 
 # include "libft.h"
 # include "../../framework/include/libunit.h"
@@ -29,16 +26,11 @@
 ** =========================== prototype declaration ===========================
 */
 
-int		strlen_launcher(void);
-int		strlen_basic_test(void);
-int		long_str_test(void);
-int		only_escaped_char_test(void);
-int		mix_escaped_char_test(void);
-int 	only_space_char_test(void);
-int		mix_space_char_test(void);
-int 	only_terminated_char_test(void);
-int		mix_terminated_char_test(void);
-int 	unicode_char_test(void);
-int 	basic_ko_test(void);
+int		isalnum_launcher(void);
+int		isalnum_basic_test(void);
+int		isalnum_number_test(void);
+int		isalnum_lowercase_test(void);
+int		isalnum_uppercase_test(void);
+int		isalnum_nonalnum_test(void);
 
 #endif
