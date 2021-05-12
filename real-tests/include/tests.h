@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 02:07:29 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/12 06:49:56 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,12 @@
 # include "test_memmove.h"
 # include "test_strlen.h"
 # include "test_atoi.h"
+# include "test_isalnum.h"
+# include "test_isalpha.h"
+# include "test_isascii.h"
+# include "test_isdigit.h"
+# include "test_isprint.h"
+# include "test_toupper.h"
+# include "test_tolower.h"
 
 #endif

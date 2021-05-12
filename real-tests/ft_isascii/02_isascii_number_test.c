@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_memmove_launcher.c                              :+:      :+:    :+:   */
+/*   02_isascii_number_test.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 17:38:25 by tarata           ###   ########.fr       */
+/*   Created: 2021/05/12 04:45:20 by tarata            #+#    #+#             */
+/*   Updated: 2021/05/12 07:10:33 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_memmove.h"
+#include "../include/test_isascii.h"
 
-int	memmove_launcher(void)
+int	isascii_number_test(void)
 {
-	t_unittest	*unittest;
-
-	unittest = NULL;
-	print_unittests_header("ft_memmove");
-	add_unittest(&unittest, "Basic text (Peach boy)", &memmove_basic_text_a);
-	return (run_unittests(&unittest));
+	if (!!ft_isascii('1') == !!isascii('1'))
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
 }

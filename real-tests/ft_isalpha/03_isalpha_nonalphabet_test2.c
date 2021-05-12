@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_memmove_launcher.c                              :+:      :+:    :+:   */
+/*   03_isalpha_nonalphabet_test2.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 17:38:25 by tarata           ###   ########.fr       */
+/*   Created: 2021/05/12 04:35:55 by tarata            #+#    #+#             */
+/*   Updated: 2021/05/12 07:04:15 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_memmove.h"
+#include "../include/test_isalpha.h"
 
-int	memmove_launcher(void)
+int	isalpha_nonalphabet_test2(void)
 {
-	t_unittest	*unittest;
-
-	unittest = NULL;
-	print_unittests_header("ft_memmove");
-	add_unittest(&unittest, "Basic text (Peach boy)", &memmove_basic_text_a);
-	return (run_unittests(&unittest));
+	if (!!ft_isalpha('\0') == !!isalpha('\0'))
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
 }
