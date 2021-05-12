@@ -18,9 +18,3 @@ jobs:
           bash -c "make fclean -C tests"
           bash -c "make test -C tests"
           bash -c "make fclean -C tests"
-
-      - name: run "make test_bonus"
-        run: |
-          bash -c "make fclean -C tests"
-          bash -c "make test_bonus -C tests"
-          bash -c "make fclean -C tests"
