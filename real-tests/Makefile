@@ -53,14 +53,14 @@ RM					= rm -f
 # ---------------------------------- color ----------------------------------- #
 
 ESC_CLR_RESET		= \e[00m
-ESC_CLR_N_BLACK		= \e[30m
-ESC_CLR_N_RED		= \e[31m
-ESC_CLR_N_GREEN		= \e[32m
-ESC_CLR_N_YELLOW	= \e[33m
-ESC_CLR_N_BLUE		= \e[34m
-ESC_CLR_N_MAGENTA	= \e[35m
-ESC_CLR_N_CYAN		= \e[36m
-ESC_CLR_N_WHITE		= \e[37m
+ESC_CLR_BLACK		= \e[30m
+ESC_CLR_RED			= \e[31m
+ESC_CLR_GREEN		= \e[32m
+ESC_CLR_YELLOW		= \e[33m
+ESC_CLR_BLUE		= \e[34m
+ESC_CLR_MAGENTA		= \e[35m
+ESC_CLR_CYAN		= \e[36m
+ESC_CLR_WHITE		= \e[37m
 
 # =============================== Make Command =============================== #
 
@@ -79,7 +79,7 @@ $(NAME):			$(TESTS_OBJS)
 					@cp $(LIBUNIT_DIR)$(LIBUNIT_NAME) $(TESTS_LIB_DIR)
 					@cd $(LIBUNIT_DIR) && make fclean
 					$(CC) $(CFLAGS) $(TESTS_OBJS) $(LDFLAGS) $(LIBS) -o $(NAME)
-					@echo "$(ESC_CLR_N_YELLOW)"
+					@echo "$(ESC_CLR_YELLOW)"
 					@echo '                _        _            _       '
 					@echo '               | |      | |          | |      '
 					@echo ' _ __ ___  __ _| |______| |_ ___  ___| |_ ___ '
