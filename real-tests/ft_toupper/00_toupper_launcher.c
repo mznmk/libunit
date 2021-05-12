@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_memmove_launcher.c                              :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 17:38:25 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/10 21:36:09 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_memmove.h"
+#include "../include/test_toupper.h"
 
-int	memmove_launcher(void)
+int	toupper_launcher(void)
 {
 	t_unittest	*unittest;
 
 	unittest = NULL;
-	print_unittests_header("ft_memmove");
-	add_unittest(&unittest, "Basic text (Peach boy)", &memmove_basic_text_a);
+	print_unittests_header("ft_toupper");
+	add_unittest(&unittest, "Basic test", &toupper_basic_test);
 	return (run_unittests(&unittest));
 }

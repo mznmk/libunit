@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   00_strlen_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 03:33:04 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/12 07:17:25 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ int	strlen_launcher(void)
 	add_unittest(&unittest, "Terminated test2", &mix_terminated_char_test);
 	add_unittest(&unittest, "Unicode test", &unicode_char_test);
 	add_unittest(&unittest, "Basic KO test", &basic_ko_test);
-	add_unittest(&unittest, "NULL test", &null_test);
-	add_unittest(&unittest, "buserror_test", &buserror_test);
 	return (run_unittests(&unittest));
 }

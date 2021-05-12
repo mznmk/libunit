@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 01:38:32 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/04/27 00:52:14 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/12 14:40:49 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static char	**create_dests(char const *s, char c, char **dests)
 			src_pos = src_pos + dest_len;
 		}
 	}
-	dests[dests_i] = '\0';
+	dests[dests_i] = NULL;
 	return (dests);
 }
 

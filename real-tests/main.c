@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 02:08:17 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/12 06:58:50 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,14 @@ static void	execute_tests(int *status)
 {
 	*status = *status | memmove_launcher();
 	*status = *status | strlen_launcher();
-	*status = *status | atoi_launcher();
+	*status = *status | isalnum_launcher();
+	*status = *status | isalpha_launcher();
+	*status = *status | isascii_launcher();
+	*status = *status | isdigit_launcher();
+	*status = *status | isprint_launcher();
+	*status = *status | toupper_launcher();
+	*status = *status | tolower_launcher();
+
 }
 
 int	main(void)
