@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/05 20:29:41 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/11 21:20:29 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/12 23:18:14 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC_NAME_MANDA		= utility/ut_putchar_fd.c \
 					  run_child_process.c \
 					  run_unittests.c
 SRCS_MANDA			= $(addprefix $(SRC_DIR), $(SRC_NAME_MANDA))
-OBJS_MANDA			= $(SRCS_MANDA:.c=.o)					  
+OBJS_MANDA			= $(SRCS_MANDA:.c=.o)
 
 SRC_NAME_BONUS		= utility/ut_putchar_fd.c \
 					  utility/ut_putendl_fd.c \
@@ -43,7 +43,9 @@ SRC_NAME_BONUS		= utility/ut_putchar_fd.c \
 					  run_child_process_bonus.c \
 					  run_unittests.c
 SRCS_BONUS			= $(addprefix $(SRC_DIR), $(SRC_NAME_BONUS))
-OBJS_BONUS			= $(SRCS_BONUS:.c=.o)					  
+OBJS_BONUS			= $(SRCS_BONUS:.c=.o) 
+
+# --------------------------------- command ---------------------------------- #
 
 CC					= gcc
 CFLAGS				= -Wall -Wextra -Werror #-g -fsanitize=address
