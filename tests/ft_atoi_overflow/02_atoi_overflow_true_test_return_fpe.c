@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   02_atoi_overflow_true_test_return_fpe.c            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/09 01:17:52 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 12:03:02 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/13 12:59:15 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/tested_functions.h"
+#include "../include/test_atoi_overflow.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+int	atoi_overflow_true_test_return_fpe(void)
 {
-	long	i;
+	int		value_ft;
+	int		value_libc;
+	char	*number;
 
-	if (!src)
-		return (dst);
-	i = -1;
-	while (src[++i])
-		dst[i] = src[i];
-	dst[++i] = '\0';
-	return (dst);
+	number = "12345678901234567890123456789012345678901234567890";
+	value_ft = ft_atoi_overflow(number);
+	value_libc = atoi(number);
+	if (value_ft == value_libc)
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
 }

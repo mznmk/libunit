@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 23:59:20 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/13 06:48:39 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/13 12:39:34 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ TESTS_SRC_NAME_COMMON	= ft_strlen/00_strlen_launcher.c \
 						  ft_strlen_segv/02_strlen_segv_false_test_return_ok.c \
 						  ft_strlen_segv/03_strlen_segv_true_test_return_segv.c \
 						  ft_strcpy/00_strcpy_launcher.c \
-						  ft_strcpy/01_strcpy_true_test_return_buse.c
+						  ft_strcpy/01_strcpy_true_test_return_buse.c \
+						  ft_atoi_overflow/00_atoi_overflow_launcher.c \
+						  ft_atoi_overflow/01_atoi_overflow_true_test_return_true.c \
+						  ft_atoi_overflow/02_atoi_overflow_true_test_return_fpe.c
 TESTS_SRCS_COMMON		= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME_COMMON))
 TESTS_OBJS_COMMON		= $(TESTS_SRCS_COMMON:.c=.o)
 TESTS_SRC_NAME_MANDA	= execute_tests.c \
@@ -45,7 +48,8 @@ TESTED_INC_DIR			= ./include/
 TESTED_SRC_DIR			= ./tested_functions/
 TESTED_SRC_NAME_COMMON	= ft_strlen.c \
 						  ft_strlen_segv.c \
-						  ft_strcpy.c
+						  ft_strcpy.c \
+						  ft_atoi_overflow.c
 TESTED_SRCS_COMMON		= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME_COMMON))
 TESTED_OBJS_COMMON		= $(TESTED_SRCS_COMMON:.c=.o)
 TESTED_SRC_NAME_BONUS	= ft_strlen_timeout.c
