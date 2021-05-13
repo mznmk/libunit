@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:44:01 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/11 20:42:28 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/13 23:23:04 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define STAT_FAILURE	-1
 
 # define TESTNAME_LENGTH	41
-# define TIMEOUT_SECOND		5
+# define TIMEOUT_SECOND		3
 
 # define ESC_FNT_RESET		"\e[0m"
 # define ESC_FNT_BOLD		"\e[1m"
