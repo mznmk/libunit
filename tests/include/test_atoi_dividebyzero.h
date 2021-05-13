@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_atoi_overflow.h                               :+:      :+:    :+:   */
+/*   test_atoi_dividebyzero.h                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:07:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 18:18:24 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/14 00:19:22 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_ATOI_OVERFLOW_H
-# define TEST_ATOI_OVERFLOW_H
+#ifndef TEST_ATOI_DIVIDEBYZERO_H
+# define TEST_ATOI_DIVIDEBYZERO_H
 
 /*
 ** ================================== library ==================================
@@ -26,8 +26,7 @@
 ** =========================== prototype declaration ===========================
 */
 
-int		atoi_overflow_launcher(void);
-int		atoi_overflow_true_test_return_true(void);
-int		atoi_overflow_true_test_return_fpe(void);
+int		atoi_dividebyzero_launcher(void);
+int		atoi_dividebyzero_true_test_return_fpe(void);
 
 #endif

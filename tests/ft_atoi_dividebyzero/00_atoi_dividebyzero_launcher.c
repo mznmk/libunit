@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_atoi_overflow_true_test_return_true.c           :+:      :+:    :+:   */
+/*   00_atoi_dividebyzero_launcher.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 13:00:08 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/14 00:18:20 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_atoi_overflow.h"
+#include "../include/test_atoi_dividebyzero.h"
 
-int	atoi_overflow_true_test_return_true(void)
+int	atoi_dividebyzero_launcher(void)
 {
-	int		value_ft;
-	int		value_libc;
-	char	*number;
+	t_unittest	*unittest;
 
-	number = "1234567890";
-	value_ft = ft_atoi_overflow(number);
-	value_libc = atoi(number);
-	if (value_ft == value_libc)
-		return (STAT_SUCCESS);
-	else
-		return (STAT_FAILURE);
+	unittest = NULL;
+	print_unittests_header("ft_atoi_dividebyzero (Bonus)");
+	add_unittest(&unittest, "TRUE Test - returns FPE",
+		&atoi_dividebyzero_true_test_return_fpe);
+	return (run_unittests(&unittest));
 }

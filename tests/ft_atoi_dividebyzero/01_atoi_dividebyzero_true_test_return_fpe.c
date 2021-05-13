@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_atoi_overflow_launcher.c                        :+:      :+:    :+:   */
+/*   01_atoi_dividebyzero_true_test_return_fpe.c        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 19:03:18 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/14 00:18:31 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_atoi_overflow.h"
+#include "../include/test_atoi_dividebyzero.h"
 
-int	atoi_overflow_launcher(void)
+int	atoi_dividebyzero_true_test_return_fpe(void)
 {
-	t_unittest	*unittest;
+	int		value_ft;
+	int		value_libc;
+	char	*number;
 
-	unittest = NULL;
-	print_unittests_header("ft_atoi_overflow (Bonus)");
-	add_unittest(&unittest, "TRUE Test - returns TRUE",
-		&atoi_overflow_true_test_return_true);
-	add_unittest(&unittest, "TRUE Test - returns FPE",
-		&atoi_overflow_true_test_return_fpe);
-	return (run_unittests(&unittest));
+	number = "123456789012345678901234567890123456789012345678901234567890";
+	value_ft = ft_atoi_dividebyzero(number);
+	value_libc = atoi(number);
+	if (value_ft == value_libc)
+		return (STAT_SUCCESS);
+	else
+		return (STAT_FAILURE);
 }

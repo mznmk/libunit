@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_overflow.c                                 :+:      :+:    :+:   */
+/*   ft_atoi_dividebyzero.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 01:17:52 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 12:57:58 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/14 00:17:47 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	skipspace_and_checksign(char *nptr, int *pos, int *sign)
 	}
 }
 
-int	ft_atoi_overflow(const char *nptr)
+int	ft_atoi_dividebyzero(const char *nptr)
 {
 	int		pos;
 	int		sign;
@@ -41,7 +41,7 @@ int	ft_atoi_overflow(const char *nptr)
 	while (nptr[pos] && ('0' <= nptr[pos] && nptr[pos] <= '9'))
 	{
 		value *= 10;
-		value += nptr[pos] - '0';
+		value /= (nptr[pos] - '0');
 		pos++;
 	}
 	return ((int)value * sign);

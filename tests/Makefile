@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 23:59:20 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/13 22:56:59 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/14 00:20:26 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,8 @@ TESTS_SRCS_MANDA		= $(addprefix $(TESTS_SRC_DIR), $(TESTS_SRC_NAME_MANDA))
 TESTS_OBJS_MANDA		= $(TESTS_SRCS_MANDA:.c=.o)					  
 TESTS_SRC_NAME_BONUS	= ft_strlen_timeout/00_strlen_timeout_launcher.c \
 						  ft_strlen_timeout/01_strlen_timeout_true_test_return_timeout.c \
-						  ft_atoi_overflow/00_atoi_overflow_launcher.c \
-						  ft_atoi_overflow/01_atoi_overflow_true_test_return_true.c \
-						  ft_atoi_overflow/02_atoi_overflow_true_test_return_fpe.c \
+						  ft_atoi_dividebyzero/00_atoi_dividebyzero_launcher.c \
+						  ft_atoi_dividebyzero/01_atoi_dividebyzero_true_test_return_fpe.c \
 						  ft_split_doublefree/00_split_doublefree_launcher.c \
 						  ft_split_doublefree/01_split_doublefree_true_test_return_abrt.c \
 						  execute_tests_bonus.c \
@@ -54,7 +53,7 @@ TESTED_SRC_NAME_COMMON	= ft_strlen.c \
 TESTED_SRCS_COMMON		= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME_COMMON))
 TESTED_OBJS_COMMON		= $(TESTED_SRCS_COMMON:.c=.o)
 TESTED_SRC_NAME_BONUS	= ft_strlen_timeout.c \
-						  ft_atoi_overflow.c \
+						  ft_atoi_dividebyzero.c \
 						  ft_split_doublefree.c
 
 TESTED_SRCS_BONUS		= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME_BONUS))
@@ -67,16 +66,16 @@ LIBUNIT_INC_DIR			= $(LIBUNIT_DIR)include/
 
 # --------------------------------- command ---------------------------------- #
 
-ECC						= gcc
-CFLAGS					= -Wall -Wextra -Werror #-g -fsanitize=address
-INCLUDE					= -I $(TESTS_INC_DIR) -I $(TESTED_INC_DIR) -I $(LIBUNIT_INC_DIR)
-LDFLAGS					= -L $(TESTS_LIB_DIR)
-LIBS					= -l $(LIBUNIT_LIBNAME)
+ECC					= gcc
+CFLAGS				= -Wall -Wextra -Werror #-g -fsanitize=address
+INCLUDE				= -I $(TESTS_INC_DIR) -I $(TESTED_INC_DIR) -I $(LIBUNIT_INC_DIR)
+LDFLAGS				= -L $(TESTS_LIB_DIR)
+LIBS				= -l $(LIBUNIT_LIBNAME)
 
-AR						= ar
-ARFLAGS					= rcs
+AR					= ar
+ARFLAGS				= rcs
 
-RM						= rm -f
+RM					= rm -f
 
 # ---------------------------------- color ----------------------------------- #
 
