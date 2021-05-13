@@ -11,6 +11,9 @@ reference
 
 # execute file
 *.out
+framework/framework
+tests/tests
+real-tests/real-tests
 
 # editor setting directory
 .vscode

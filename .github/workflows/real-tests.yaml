@@ -1,9 +1,6 @@
 name: real-tests
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   real-tests:

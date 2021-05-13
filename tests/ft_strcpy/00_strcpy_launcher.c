@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_tests_bonus.c                              :+:      :+:    :+:   */
+/*   00_strcpy_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 22:12:08 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 18:09:03 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/13 06:40:49 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/tests.h"
+#include "../include/test_strcpy.h"
 
-void	execute_tests(int *status)
+int	strcpy_launcher(void)
 {
-	*status = *status | strlen_launcher();
-	*status = *status | strlen_segv_launcher();
-	*status = *status | strlen_timeout_launcher();
-	*status = *status | strcpy_launcher();
-	*status = *status | atoi_overflow_launcher();
-	*status = *status | split_doublefree_launcher();
+	t_unittest	*unittest;
+
+	unittest = NULL;
+	print_unittests_header("ft_strcpy");
+	add_unittest(&unittest, "TRUE Test - returns BUSE",
+		&strcpy_true_test_return_buse);
+	return (run_unittests(&unittest));
 }
