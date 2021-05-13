@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_atoi_overflow_true_test_return_fpe.c            :+:      :+:    :+:   */
+/*   01_split_doublefree_true_test_return_abrt.c        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 14:30:56 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/13 19:00:14 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_atoi_overflow.h"
+#include "../include/test_split_doublefree.h"
 
-int	atoi_overflow_true_test_return_fpe(void)
+int	split_doublefree_true_test_return_abrt(void)
 {
-	int		value_ft;
-	int		value_libc;
-	char	*number;
+	char	*string;
+	char	**expected;
+	char	**splited;
 
-	number = "12345678901234567890123456789012345678901234567890";
-	value_ft = ft_atoi_overflow(number);
-	value_libc = atoi(number);
-	if (value_ft == value_libc)
-		return (STAT_SUCCESS);
-	else
-		return (STAT_FAILURE);
+	string = " aaa bbb ccc ddd eee ";
+	expected = ((char *[6]){"aaa", "bbb", "ccc", "ddd", "eee", NULL});
+	splited = NULL;
+	splited = ft_split_doublefree(string, ' ');
+	while (*expected && *splited)
+	{
+		if (strcmp(*expected, *splited))
+			return (STAT_FAILURE);
+		expected++;
+		splited++;
+	}
+	return (STAT_SUCCESS);
 }

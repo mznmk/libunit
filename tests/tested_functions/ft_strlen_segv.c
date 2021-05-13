@@ -15,7 +15,7 @@ unsigned long	ft_strlen_segv(const char *s)
 	unsigned long	i;
 
 	i = 0;
-	while (s[i++])
-		i++;
+	while (s[i--])
+		i--;
 	return (i);
 }
