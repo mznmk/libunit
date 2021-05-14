@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/14 19:04:57 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/14 21:44:01 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int	main(void)
 	print_framework_header();
 	status = 0;
 	execute_tests(&status);
-	return (status * -1);
+	return (status);
 }
