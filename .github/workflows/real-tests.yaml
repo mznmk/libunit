@@ -10,5 +10,5 @@ jobs:
       - name: checkout git repository
         uses: actions/checkout@v2
 
-      - name: run "make test"
+      - name: run "make test_bonus"
         run: bash -c "make test_bonus -C real-tests"
