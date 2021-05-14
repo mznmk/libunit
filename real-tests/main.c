@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/14 13:21:57 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:04:57 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	execute_tests(int *status)
 	*status = *status | isprint_launcher();
 	*status = *status | toupper_launcher();
 	*status = *status | tolower_launcher();
-
+	*status = *status | atoi_launcher();
 }
 
 int	main(void)

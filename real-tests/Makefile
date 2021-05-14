@@ -28,12 +28,24 @@ TESTS_SRC_NAME		= ft_memmove/00_memmove_launcher.c \
 					  ft_strlen/06_strlen_space_test2.c \
 					  ft_strlen/07_strlen_terminated_test.c \
 					  ft_strlen/08_strlen_terminated_test2.c \
-					  ft_strlen/09_strlen_unicode_test.c \
-					  ft_strlen/10_strlen_basic_ko_test.c \
+					  ft_strlen/09_strlen_basic_ko_test.c \
 					  ft_atoi/00_atoi_launcher.c \
 					  ft_atoi/01_atoi_zero_a.c \
 					  ft_atoi/02_atoi_positive_number_a.c \
 					  ft_atoi/03_atoi_negative_number_a.c \
+					  ft_atoi/04_atoi_intmin.c \
+					  ft_atoi/05_atoi_multiple_diffrent_sign.c \
+					  ft_atoi/06_atoi_plus_sign_in_number.c \
+					  ft_atoi/07_atoi_minus_sign_in_number.c \
+					  ft_atoi/08_atoi_alphabet.c \
+					  ft_atoi/09_atoi_alphabet_number.c \
+					  ft_atoi/10_atoi_space_character.c \
+					  ft_atoi/11_atoi_space_character_number.c \
+					  ft_atoi/12_atoi_multiple_same_sign.c \
+					  ft_atoi/13_atoi_smallsize_number.c \
+					  ft_atoi/14_atoi_middlesize_number.c \
+					  ft_atoi/15_atoi_bigsize_number.c \
+					  ft_atoi/16_atoi_intmax.c \
 					  ft_isalnum/00_isalnum_launcher.c \
 					  ft_isalnum/01_isalnum_basic_test.c \
 					  ft_isalnum/02_isalnum_number_test.c \

@@ -6,7 +6,7 @@
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:35 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/12 07:17:25 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/14 19:46:30 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	strlen_launcher(void)
 	add_unittest(&unittest, "Space test2", &mix_space_char_test);
 	add_unittest(&unittest, "Terminated test", &only_terminated_char_test);
 	add_unittest(&unittest, "Terminated test2", &mix_terminated_char_test);
-	add_unittest(&unittest, "Unicode test", &unicode_char_test);
 	add_unittest(&unittest, "Basic KO test", &basic_ko_test);
 	return (run_unittests(&unittest));
 }

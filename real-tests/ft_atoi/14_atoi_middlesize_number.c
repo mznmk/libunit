@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   10_strlen_basic_ko_test.c                          :+:      :+:    :+:   */
+/*   14_atoi_middlesize_number.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 01:58:29 by tarata            #+#    #+#             */
-/*   Updated: 2021/05/12 07:18:56 by tarata           ###   ########.fr       */
+/*   Created: 2021/05/14 18:29:39 by tarata            #+#    #+#             */
+/*   Updated: 2021/05/14 18:42:39 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_strlen.h"
+#include "../include/test_atoi.h"
 
-int basic_ko_test(void)
+int	atoi_middlesize_number(void)
 {
-	if (ft_strlen("aaaa") != strlen("bbbbb"))
-    	return (STAT_SUCCESS);
+	if (ft_atoi("123456") == atoi("123456"))
+		return (STAT_SUCCESS);
 	else
 		return (STAT_FAILURE);
 }
