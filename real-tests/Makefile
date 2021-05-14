@@ -109,7 +109,7 @@ $(NAME):			$(TESTS_OBJS)
 					@cd $(LIBFT_DIR) && make re
 					@cp $(LIBFT_DIR)$(LIBFT_NAME) $(TESTS_LIB_DIR)
 					@cd $(LIBFT_DIR) && make fclean
-					@cd $(LIBUNIT_DIR) && make re
+					@cd $(LIBUNIT_DIR) && make mandatory
 					@cp $(LIBUNIT_DIR)$(LIBUNIT_NAME) $(TESTS_LIB_DIR)
 					@cd $(LIBUNIT_DIR) && make fclean
 					$(CC) $(CFLAGS) $(TESTS_OBJS) $(LDFLAGS) $(LIBS) -o $(NAME)
@@ -145,8 +145,28 @@ re:					fclean all
 # ----------------------------------- test ----------------------------------- #
 
 test:				$(NAME)
-					@./$(NAME)
+					@./$(NAME) 2>/dev/null
+
+# -------------------------------- test_bonus -------------------------------- #
+
+test_bonus:			$(TESTS_OBJS)
+					@cd $(LIBFT_DIR) && make re
+					@cp $(LIBFT_DIR)$(LIBFT_NAME) $(TESTS_LIB_DIR)
+					@cd $(LIBFT_DIR) && make fclean
+					@cd $(LIBUNIT_DIR) && make bonus
+					@cp $(LIBUNIT_DIR)$(LIBUNIT_NAME) $(TESTS_LIB_DIR)
+					@cd $(LIBUNIT_DIR) && make fclean
+					$(CC) $(CFLAGS) $(TESTS_OBJS) $(LDFLAGS) $(LIBS) -o $(NAME)
+					@echo "$(ESC_CLR_CYAN)"
+					@echo '                _        _            _       '
+					@echo '               | |      | |          | |      '
+					@echo ' _ __ ___  __ _| |______| |_ ___  ___| |_ ___ '
+					@echo "| '__/ _ \/ _' | |______| __/ _ \/ __| __/ __|"
+					@echo '| | |  __/ (_| | |      | ||  __/\__ \ |_\__ \'
+					@echo '|_|  \___|\__,_|_|       \__\___||___/\__|___/'
+					@echo "$(ESC_CLR_RESET)"
+					@./$(NAME) 2>/dev/null
 
 # ---------------------------------- .PHONY ---------------------------------- #
 
-.PHONY:				all clean fclean re test
+.PHONY:				all clean fclean re test test_bonus
