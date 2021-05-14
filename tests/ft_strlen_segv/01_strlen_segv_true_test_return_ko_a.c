@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_false_test_return_ok.c                   :+:      :+:    :+:   */
+/*   01_strlen_segv_true_test_return_ok.c               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/13 13:36:15 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/14 23:32:35 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_strlen.h"
+#include "../include/test_strlen_segv.h"
 
-int	strlen_false_test_return_ok(void)
+int	strlen_segv_true_test_return_ko_a(void)
 {
-	if (ft_strlen("HelloWorld") != strlen("HelloWork"))
+	if (ft_strlen_segv("HelloWork") == strlen("HelloWork"))
 		return (STAT_SUCCESS);
 	else
 		return (STAT_FAILURE);

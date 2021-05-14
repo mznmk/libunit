@@ -27,8 +27,8 @@
 */
 
 int		strlen_segv_launcher(void);
-int		strlen_segv_true_test_return_ok(void);
-int		strlen_segv_false_test_return_ok(void);
+int		strlen_segv_true_test_return_ko_a(void);
+int		strlen_segv_true_test_return_ko_b(void);
 int		strlen_segv_true_test_return_segv(void);
 
 #endif

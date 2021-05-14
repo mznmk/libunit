@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 23:59:20 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/14 21:05:39 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/14 23:42:19 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,12 +49,12 @@ TESTS_SRC_NAME_COMMON	= ft_atoi/00_atoi_launcher.c \
 						  ft_atoi/28_atoi_multi_minus_a.c \
 						  ft_atoi/29_atoi_multi_plus_a.c \
 						  ft_strlen/00_strlen_launcher.c \
-						  ft_strlen/01_strlen_true_test_return_ok.c \
-						  ft_strlen/02_strlen_false_test_return_ok.c \
+						  ft_strlen/01_strlen_true_test_return_ok_a.c \
+						  ft_strlen/02_strlen_true_test_return_ok_b.c \
 						  ft_strlen/03_strlen_true_test_return_segv.c \
 						  ft_strlen_segv/00_strlen_segv_launcher.c \
-						  ft_strlen_segv/01_strlen_segv_true_test_return_ok.c \
-						  ft_strlen_segv/02_strlen_segv_false_test_return_ok.c \
+						  ft_strlen_segv/01_strlen_segv_true_test_return_ko_a.c \
+						  ft_strlen_segv/02_strlen_segv_true_test_return_ko_b.c \
 						  ft_strlen_segv/03_strlen_segv_true_test_return_segv.c \
 						  ft_strcpy/00_strcpy_launcher.c \
 						  ft_strcpy/01_strcpy_true_test_return_buse.c
