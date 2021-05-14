@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   09_unicode_test.c                                  :+:      :+:    :+:   */
+/*   05_atoi_multiple_diffrent_sign.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 01:50:58 by tarata            #+#    #+#             */
-/*   Updated: 2021/05/11 01:51:43 by tarata           ###   ########.fr       */
+/*   Created: 2021/05/14 18:57:48 by tarata            #+#    #+#             */
+/*   Updated: 2021/05/14 19:04:04 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_strlen.h"
+#include "../include/test_atoi.h"
 
-int unicode_char_test(void)
+int	atoi_multiple_different_sign(void)
 {
-	if (ft_strlen("ああああああ") == strlen("ああああああ"))
-    	return (STAT_SUCCESS);
+	if (ft_atoi("+-1") == atoi("+-1"))
+		return (STAT_SUCCESS);
 	else
 		return (STAT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: tarata <tarata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/12 06:59:16 by tarata           ###   ########.fr       */
+/*   Updated: 2021/05/14 19:40:05 by tarata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	ft_isprint_check(void)
 }
 
 int	isprint_basic_test(void)
-{
-	
+{	
 	if (ft_isprint_check())
 		return (STAT_SUCCESS);
 	else
