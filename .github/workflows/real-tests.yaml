@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: run "make test"
-        run: bash -c "make test -C real-tests"
+        run: bash -c "make test_bonus -C real-tests"
