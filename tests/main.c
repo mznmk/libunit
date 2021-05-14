@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:39 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/14 13:22:02 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/14 21:34:55 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	main(void)
 	print_framework_header();
 	status = 0;
 	execute_tests(&status);
-	return (status * -1);
+	return (status);
 }
