@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_strlen_true_test_return_segv.c                  :+:      :+:    :+:   */
+/*   12_atoi_negative_number_c.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 00:06:29 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/14 12:25:05 by mmizuno          ###   ########.fr       */
+/*   Created: 2021/05/09 00:06:42 by mmizuno           #+#    #+#             */
+/*   Updated: 2021/05/14 19:43:22 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test_strlen.h"
+#include "../include/test_atoi.h"
 
-int	strlen_true_test_return_segv(void)
+int	atoi_negative_number_c(void)
 {
-	if (ft_strlen((void *)42) == strlen((void *)42))
+	if (ft_atoi("-1234567890") == atoi("-1234567890"))
 		return (STAT_SUCCESS);
 	else
 		return (STAT_FAILURE);

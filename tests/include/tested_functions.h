@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 00:07:41 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/14 00:21:21 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:57:15 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 ** =========================== prototype declaration ===========================
 */
 
+int				ft_atoi(const char *nptr);
 unsigned long	ft_strlen(const char *s);
 unsigned long	ft_strlen_segv(const char *s);
 unsigned long	ft_strlen_timeout(const char *s);

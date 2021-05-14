@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 23:59:20 by mmizuno           #+#    #+#              #
-#    Updated: 2021/05/14 13:10:48 by mmizuno          ###   ########.fr        #
+#    Updated: 2021/05/14 21:05:39 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,37 @@ TESTS_LIB_DIR			= ./library/
 TESTS_INC_DIR			= ./include/
 TESTS_SRC_DIR			= ./
 
-TESTS_SRC_NAME_COMMON	= ft_strlen/00_strlen_launcher.c \
+TESTS_SRC_NAME_COMMON	= ft_atoi/00_atoi_launcher.c \
+						  ft_atoi/01_atoi_zero_a.c \
+						  ft_atoi/02_atoi_zero_b.c \
+						  ft_atoi/03_atoi_zero_c.c \
+						  ft_atoi/04_atoi_number_a.c \
+						  ft_atoi/05_atoi_number_b.c \
+						  ft_atoi/06_atoi_number_c.c \
+						  ft_atoi/07_atoi_positive_number_a.c \
+						  ft_atoi/08_atoi_positive_number_b.c \
+						  ft_atoi/09_atoi_positive_number_c.c \
+						  ft_atoi/10_atoi_negative_number_a.c \
+						  ft_atoi/11_atoi_negative_number_b.c \
+						  ft_atoi/12_atoi_negative_number_c.c \
+						  ft_atoi/13_atoi_int_min.c \
+						  ft_atoi/14_atoi_int_max.c \
+						  ft_atoi/15_atoi_int_underflow.c \
+						  ft_atoi/16_atoi_int_overflow.c \
+						  ft_atoi/17_atoi_long_min.c \
+						  ft_atoi/18_atoi_long_max.c \
+						  ft_atoi/19_atoi_long_underflow.c \
+						  ft_atoi/20_atoi_long_overflow.c \
+						  ft_atoi/21_atoi_nothing.c \
+						  ft_atoi/22_atoi_before_string_a.c \
+						  ft_atoi/23_atoi_after_string_a.c \
+						  ft_atoi/24_atoi_before_space_a.c \
+						  ft_atoi/25_atoi_after_space_a.c \
+						  ft_atoi/26_atoi_before_invisible_a.c \
+						  ft_atoi/27_atoi_after_invisible_a.c \
+						  ft_atoi/28_atoi_multi_minus_a.c \
+						  ft_atoi/29_atoi_multi_plus_a.c \
+						  ft_strlen/00_strlen_launcher.c \
 						  ft_strlen/01_strlen_true_test_return_ok.c \
 						  ft_strlen/02_strlen_false_test_return_ok.c \
 						  ft_strlen/03_strlen_true_test_return_segv.c \
@@ -47,7 +77,8 @@ TESTS_OBJS_BONUS		= $(TESTS_SRCS_BONUS:.c=.o)
 
 TESTED_INC_DIR			= ./include/
 TESTED_SRC_DIR			= ./tested_functions/
-TESTED_SRC_NAME_COMMON	= ft_strlen.c \
+TESTED_SRC_NAME_COMMON	= ft_atoi.c \
+						  ft_strlen.c \
 						  ft_strlen_segv.c \
 						  ft_strcpy.c
 TESTED_SRCS_COMMON		= $(addprefix $(TESTED_SRC_DIR), $(TESTED_SRC_NAME_COMMON))

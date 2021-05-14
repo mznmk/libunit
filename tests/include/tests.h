@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:59:31 by mmizuno           #+#    #+#             */
-/*   Updated: 2021/05/14 13:27:38 by mmizuno          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:56:56 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ** ================================== library ==================================
 */
 
+# include "test_atoi.h"
 # include "test_strlen.h"
 # include "test_strlen_segv.h"
 # include "test_strlen_timeout.h"
